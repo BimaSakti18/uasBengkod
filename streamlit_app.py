@@ -12,10 +12,10 @@ st.set_page_config(
     layout="wide",
 )
 
-CHURN_THRESHOLD = 0.70
+CHURN_THRESHOLD = 0.50
 
 def interpret_risk(prob):
-    if prob >= 0.70:
+    if prob >= 0.50:
         return "RISIKO TINGGI"
     elif prob >= 0.40:
         return "RISIKO MENENGAH"
@@ -231,7 +231,7 @@ with col1:
         else:
             st.success("✅ Pelanggan **TIDAK CHURN**")
 
-        st.caption("📌 Catatan: Pelanggan dikategorikan churn jika probabilitas ≥ 70%.")
+        st.caption("📌 Catatan: Pelanggan dikategorikan churn jika probabilitas ≥ 50%.")
 
     st.markdown("---")
     st.subheader("🔍 Feature Descriptions")
